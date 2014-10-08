@@ -4,12 +4,15 @@
 	author : @simonbernard90
 */
 
-define(['jquery'], function (\$) {
+define([${1:'jquery'}], function (${2:\$}) {
 
 	'use strict';
+
+	${3:// Statements here ...}
 
 });
 ]]></content>
 	<tabTrigger>define</tabTrigger>
 	<scope>source.js</scope>
+	<description>define (RequireJS)</description>
 </snippet>
