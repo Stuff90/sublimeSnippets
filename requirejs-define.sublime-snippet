@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+/*
+	author : @simonbernard90
+*/
+
+define(['jquery'], function (\$) {
+
+	'use strict';
+
+});
+]]></content>
+	<tabTrigger>define</tabTrigger>
+	<scope>source.js</scope>
+</snippet>
