@@ -1,48 +1,46 @@
 <snippet>
 	<content><![CDATA[
-;(function ( \$, window, document, undefined ) {
-    'use strict';
-
-
-    var pluginName = '${1:defaultPluginName}',
-        defaults = {${2:
-            ${3:propertyName}: ${4:'value'}
-        }};
-
-    function Plugin( element, options ) {
-        this.element = element;
-        this.\$el     = \$(this.element);
-
-        this.options = \$.extend( {}, defaults, options);
-
-        this._defaults  = defaults;
-        this._name      = pluginName;
-
-        this.init();
-    }
-
-    Plugin.prototype = {
-        init : function(){
-        	${5:// Initialization here ...}
-        }${6:,
-
-        ${7:methodName} : function(){
-        	${8:// Method ...}
-        }}
+var pluginName = "${1:pluginName}",
+    defaults = {
+        ${2:defaultParamKey}: "${3:defaultParamValue}"${4:,
+        }
     };
 
-    \$.fn[pluginName] = function ( options ) {
-        return this.each(function () {
-            if (!\$.data(this, 'plugin_' + pluginName)) {
-                \$.data(this, 'plugin_' + pluginName,
-                new Plugin( this, options ));
-            }
-        });
-    };
+function Plugin( element, options ) {
+    this.element 	= element;
+    this.\$el 		= \$(this.element);
 
-})( jQuery, window, document );
+    this.options = \$.extend( {}, defaults, options) ;
+
+    this._defaults = defaults;
+    this._name = pluginName;
+
+    this.init();
+}
+
+Plugin.prototype = {
+
+    init: function() {
+    	${8:// init ...}
+    }${5:,
+
+    ${6:newFunction}: function(el, options) \{
+        ${7:// new function logic ... }
+    \}}
+};
+
+\$.fn[pluginName] = function ( options ) {
+    return this.each(function () {
+        if (!\$.data(this, "plugin_" + pluginName)) {
+            \$.data(this, "plugin_" + pluginName,
+            new Plugin( this, options ));
+        }
+    });
+};
 ]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>plugin</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.js</scope>
 	<description>jQuery Plugin</description>
 </snippet>
